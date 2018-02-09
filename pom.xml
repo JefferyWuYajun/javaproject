@@ -11,12 +11,12 @@
 
     <properties>
         <jdk.version>1.8</jdk.version>
+        <junit.version>4.10</junit.version>
     </properties>
 
     <modules>
         <module>explore-service</module>
         <module>explore-web</module>
-
     </modules>
 
 
@@ -31,6 +31,13 @@
                 <groupId>com.home.explore</groupId>
                 <artifactId>explore-web</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <!-- Test dependecies -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
