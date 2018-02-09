@@ -10,9 +10,18 @@ public class YieldThreadTest {
 
     @Test
     public void YieldThradTest(){
-        Thread threadA = new YieldThread("A");
+        /*Thread threadA = new YieldThread("A");
         Thread threadB = new YieldThread("B");
         threadA.start();
-        threadB.start();
+        threadB.start();*/
+
+        Thread thread = new YieldThread("BB");
+        thread.start();
+        try {
+            Thread.sleep(8000);
+        } catch (InterruptedException e) {
+            System.out.println(111);
+        }
+        thread.interrupt();
     }
 }

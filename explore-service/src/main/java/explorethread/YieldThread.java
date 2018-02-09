@@ -20,6 +20,12 @@ public class YieldThread extends Thread {
             /*if (i ==30) {
                 this.yield();
             }*/
+            try {
+                this.sleep(2000);
+            } catch (InterruptedException e) {
+                System.out.println(222);
+                e.printStackTrace();
+            }
         }
     }
 }
