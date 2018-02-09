@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EclipseCodeFormatter">
+    <option name="defaultSettings" value="true" />
+    <option name="formatter" value="ECLIPSE" />
+    <option name="id" value="1487061515837" />
+    <option name="name" value="default" />
+    <option name="pathToConfigFileJava" value="D:/SoftWare/LYFormatter.xml" />
+    <option name="selectedJavaProfile" value="LY Convention" />
+  </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/explore-web" />
   </component>
