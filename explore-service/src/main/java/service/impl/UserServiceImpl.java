@@ -12,7 +12,5 @@ public class UserServiceImpl implements UserService {
     @Override
     public void test(String userName) throws Exception {
         System.out.println("test");
-        System.out.println("test2");
-        System.out.println("sss");
     }
 }
