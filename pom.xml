@@ -12,6 +12,9 @@
     <properties>
         <jdk.version>1.8</jdk.version>
         <junit.version>4.10</junit.version>
+        <powermock.version>1.5</powermock.version>
+        <easymock.powermock.version>1.4.10</easymock.powermock.version>
+        <power.api.mockito.version>1.7.3</power.api.mockito.version>
     </properties>
 
     <modules>
@@ -57,7 +60,19 @@
                 <artifactId>logback-classic</artifactId>
                 <version>1.2.3</version>
             </dependency>
-
+            <!-- power mock -->
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-module-junit4</artifactId>
+                <version>${powermock.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito</artifactId>
+                <version>${power.api.mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

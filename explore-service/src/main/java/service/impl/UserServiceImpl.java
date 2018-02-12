@@ -1,7 +1,7 @@
 package service.impl;
 
-import com.sun.media.sound.SoftTuning;
 import service.UserService;
+import static service.CommonService.getUserName;
 
 /**
  * @author jefferywu
@@ -11,6 +11,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void test(String userName) throws Exception {
-        System.out.println("test");
+        String name = getUserName();
+        System.out.println(name);
+    }
+
+    @Override
+    public void junitOrg(String jobNumber) throws Exception {
+        System.out.println("jobNumber :" + jobNumber);
     }
 }
