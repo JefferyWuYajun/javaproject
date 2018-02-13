@@ -8,7 +8,5 @@ import java.util.concurrent.ExecutionException;
  */
 public interface UserService {
 
-    void test(String userName) throws Exception;
-
     void junitOrg(String jobNumber) throws Exception;
 }
