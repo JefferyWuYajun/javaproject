@@ -1,3 +1,2 @@
 # javaproject
-use for test java hit
-git test2
+## 本项目为测试项目
