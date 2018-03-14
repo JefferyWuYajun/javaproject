@@ -9,15 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>explore-design</artifactId>
-
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.home.explore</groupId>
-            <artifactId>explore-service</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 
