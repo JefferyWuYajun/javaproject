@@ -1,3 +1,5 @@
+package zk;
+
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -8,7 +10,7 @@ import org.apache.zookeeper.ZooKeeper;
 
 /**
  * @author wyj40124
- * @version Id: Zookeeper_Constructor_Usage_Simple, v 0.1 2018/3/13 13:53 wyj40124 Exp $
+ * @version Id: zk.Zookeeper_Constructor_Usage_Simple, v 0.1 2018/3/13 13:53 wyj40124 Exp $
  */
 public class Zookeeper_Constructor_Usage_Simple implements Watcher {
 
@@ -18,11 +20,11 @@ public class Zookeeper_Constructor_Usage_Simple implements Watcher {
     public void process(WatchedEvent event) {
         System.out.println("Received watched event:" + event);
         if (Event.KeeperState.SyncConnected == event.getState()) {
-            try {
+            /*try {
                 Thread.sleep(4000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
             countDownLatch.countDown();
         }
     }
