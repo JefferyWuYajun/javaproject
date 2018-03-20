@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.data.Stat;
 
 /**
  * @author wyj40124
@@ -16,28 +17,32 @@ public class Zookeeper_Constructor_Usage_Simple implements Watcher {
 
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
+    private static ZooKeeper zk;
+
     @Override
     public void process(WatchedEvent event) {
-        System.out.println("Received watched event:" + event);
+        System.out.println(zk.getState());
+        System.out.println("【接收到回调事件】Received watched event:" + event.getState());
         if (Event.KeeperState.SyncConnected == event.getState()) {
-            /*try {
-                Thread.sleep(4000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }*/
             countDownLatch.countDown();
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        ZooKeeper zk = new ZooKeeper("127.0.0.1:2181", 5000, new Zookeeper_Constructor_Usage_Simple());
+    public static void main(String[] args) throws Exception {
+        //实例化zookeeper
+        zk = new ZooKeeper("127.0.0.1:2181", 5000, new Zookeeper_Constructor_Usage_Simple());
+        //获取zk状态
         System.out.println(zk.getState());
-
         try {
             countDownLatch.await(3, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        Stat stat = new Stat();
+        String rslt = new String(zk.getData("/app", false, stat));
+        System.out.println("getData()结果:" + rslt);
         System.out.println("Zookeeper session established");
+        zk.close();
+        System.out.println(zk.getState());
     }
 }

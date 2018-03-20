@@ -23,23 +23,20 @@ public class Recipes_NoLock {
         final InterProcessMutex lock = new InterProcessMutex(client, lock_path);
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         for (int i = 0; i < 10; i++) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        countDownLatch.await();
-                        lock.acquire();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss|SSS");
-                    String orderNo = sdf.format(new Date());
-                    System.err.println("生成的订单号是 : " + orderNo);
-                    try {
-                        lock.release();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+            new Thread(() -> {
+                try {
+                    countDownLatch.await();
+                    lock.acquire();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss|SSS");
+                String orderNo = sdf.format(new Date());
+                System.err.println("生成的订单号是 : " + orderNo);
+                try {
+                    lock.release();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }).start();
         }
