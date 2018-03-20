@@ -21,7 +21,6 @@ public class Zookeeper_Constructor_Usage_Simple implements Watcher {
 
     @Override
     public void process(WatchedEvent event) {
-        System.out.println(zk.getState());
         System.out.println("【接收到回调事件】Received watched event:" + event.getState());
         if (Event.KeeperState.SyncConnected == event.getState()) {
             countDownLatch.countDown();
@@ -38,11 +37,13 @@ public class Zookeeper_Constructor_Usage_Simple implements Watcher {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println(zk.getState());
         Stat stat = new Stat();
         String rslt = new String(zk.getData("/app", false, stat));
         System.out.println("getData()结果:" + rslt);
         System.out.println("Zookeeper session established");
         zk.close();
         System.out.println(zk.getState());
+        //Thread.sleep(10000);
     }
 }
