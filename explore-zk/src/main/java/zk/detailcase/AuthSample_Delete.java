@@ -1,4 +1,4 @@
-package zk;
+package zk.detailcase;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs;
@@ -6,7 +6,7 @@ import org.apache.zookeeper.ZooKeeper;
 
 /**
  * @author wyj40124
- * @version Id: zk.AuthSample_Delete, v 0.1 2018/3/15 11:26 wyj40124 Exp $
+ * @version Id: zk.detailcase.AuthSample_Delete, v 0.1 2018/3/15 11:26 wyj40124 Exp $
  */
 public class AuthSample_Delete {
 
@@ -40,5 +40,7 @@ public class AuthSample_Delete {
         ZooKeeper zookeeper5 = new ZooKeeper("127.00.1:2181", 5000, null);
         zookeeper5.delete(PATH3, -1);
         System.out.println("success delete znode: " + zookeeper5);
+
+        String a = "a";
     }
 }

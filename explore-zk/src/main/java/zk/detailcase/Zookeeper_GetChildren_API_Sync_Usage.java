@@ -1,4 +1,4 @@
-package zk;
+package zk.detailcase;
 
 import org.apache.zookeeper.*;
 
@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * @author wyj40124
- * @version Id: zk.Zookeeper_GetChildren_API_Sync_Usage, v 0.1 2018/3/15 10:43 wyj40124 Exp $
+ * @version Id: zk.detailcase.Zookeeper_GetChildren_API_Sync_Usage, v 0.1 2018/3/15 10:43 wyj40124 Exp $
  */
 public class Zookeeper_GetChildren_API_Sync_Usage implements Watcher {
 

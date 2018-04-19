@@ -1,4 +1,4 @@
-package zk;
+package zk.detailcase;
 
 import org.apache.zookeeper.*;
 
@@ -29,6 +29,7 @@ public class Zookeeper_GetChildren_API_ASync_Usage implements Watcher {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                String aaaaaa = "aaa";
             }
         }
     }

@@ -1,6 +1,5 @@
-package zk;
+package zk.detailcase;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;

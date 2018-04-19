@@ -1,4 +1,4 @@
-package zk;
+package zk.detailcase;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -9,7 +9,7 @@ import org.apache.zookeeper.data.Stat;
 
 /**
  * @author wyj40124
- * @version Id: zk.Zookeeper_Constructor_Usage_Simple, v 0.1 2018/3/13 13:53 wyj40124 Exp $
+ * @version Id: zk.detailcase.Zookeeper_Constructor_Usage_Simple, v 0.1 2018/3/13 13:53 wyj40124 Exp $
  */
 public class Zookeeper_Constructor_Usage_Simple implements Watcher {
 

@@ -1,4 +1,4 @@
-package zk;
+package zk.detailcase;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -8,7 +8,7 @@ import org.apache.zookeeper.*;
  * 创建节点-异步方式
  *
  * @author wyj40124
- * @version Id: zk.Zookeeper_Create_API_ASync_Usage, v 0.1 2018/3/15 10:27 wyj40124 Exp $
+ * @version Id: zk.detailcase.Zookeeper_Create_API_ASync_Usage, v 0.1 2018/3/15 10:27 wyj40124 Exp $
  */
 public class Zookeeper_Create_API_ASync_Usage implements Watcher {
 
