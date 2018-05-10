@@ -1,6 +1,7 @@
 package zk.detailcase;
 
 import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,11 +29,17 @@ public class Zookeeper_GetChildren_API_Sync_Usage implements Watcher {
     }
 
     public static void main(String[] args) throws IOException,InterruptedException,KeeperException {
-        String path = "/zk-book-1";
-        zk = new ZooKeeper("127.0.0.1:2181", 5000, new Zookeeper_GetChildren_API_Sync_Usage());
+        String path = "/test";
+        zk = new ZooKeeper("127.0.0.1:2181", 60000, new Zookeeper_GetChildren_API_Sync_Usage());
         connectedSemaphore.await();
 
-        try {
+        Stat stat = new Stat();
+        String a =  new String(zk.getData(path, null, stat));
+        System.out.println(a);
+        System.out.println(stat.toString());
+
+        Thread.sleep(Long.MAX_VALUE);
+        /*try {
             zk.create(path, "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
         } catch (KeeperException e) {
             e.printStackTrace();
@@ -53,6 +60,6 @@ public class Zookeeper_GetChildren_API_Sync_Usage implements Watcher {
 
         zk.create(path + "/c3", "".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
         System.out.println("success create znode: " + path + "/c3");
-        Thread.sleep(Integer.MAX_VALUE);
+        Thread.sleep(Integer.MAX_VALUE);*/
     }
 }

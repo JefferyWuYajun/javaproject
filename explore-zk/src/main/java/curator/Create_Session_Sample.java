@@ -17,6 +17,7 @@ public class Create_Session_Sample {
         CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("127.0.0.1:2181", retryPolicy);
         curatorFramework.start();
         System.out.println("zookeeper session established");
+        curatorFramework.close();
 
         CuratorFramework client1 = CuratorFrameworkFactory.builder().connectString("127.0.0.1:2181")
                 .sessionTimeoutMs(5000).retryPolicy(retryPolicy).namespace("base").build();
